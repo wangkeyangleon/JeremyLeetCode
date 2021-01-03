@@ -1,3 +1,5 @@
+package leetcode;
+
 /**
  * @program: LeetCode
  * @description: 26
