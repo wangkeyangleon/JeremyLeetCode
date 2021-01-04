@@ -49,6 +49,21 @@ package dataStructure;
  **/
 public class LinkedListDemo {
     public static void main(String[] args) {
+        SingleLinkedList singleLinkedList = new SingleLinkedList();
+        singleLinkedList.addAtHead(0);
+        singleLinkedList.addAtTail(1);
+        singleLinkedList.addAtTail(2);
+        singleLinkedList.addAtTail(3);
+        singleLinkedList.addAtTail(4);
+        System.out.println("size: "+singleLinkedList.size);
+        System.out.println(singleLinkedList.get(2));
+        singleLinkedList.showLinkedList();
+        System.out.println("+++++++++++++++++++++++++");
+        singleLinkedList.deleteAtIndex(2);
+        System.out.println("size: "+singleLinkedList.size);
+        singleLinkedList.showLinkedList();
+
+
 
     }
 }
@@ -150,6 +165,14 @@ class SingleLinkedList {
         temp.next = temp.next.next;
 
     }
+
+    public void showLinkedList(){
+        Node temp = head;
+        for (int i = 0; i <size ; i++) {
+            System.out.println(temp.next);
+            temp = temp.next;
+        }
+    }
 }
 
 /**
@@ -164,5 +187,12 @@ class Node {
 
     public Node(Integer val) {
         this.val = val;
+    }
+
+    @Override
+    public String toString() {
+        return "Node{" +
+                "val=" + val +
+                '}';
     }
 }
