@@ -1,4 +1,4 @@
-package dataStructure;
+package leetcode.dataStructure;
 
 /**
  * @program: LeetCode
