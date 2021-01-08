@@ -1,6 +1,7 @@
 package leetcode.dataStructure;
 
 import java.util.Deque;
+import java.util.Stack;
 
 /**
  * @program: LeetCode
@@ -35,74 +36,98 @@ import java.util.Deque;
  * @create: 2021-01-07 21:58
  **/
 public class MiniStack {
-    private int maxsize = 100;
-    private int[] element;
-    private int size;
-    private int min;
+    //    private int maxsize = 100;
+//    private int[] element;
+//    private int size;
+//    private int min;
+//
+//    /**
+//     * initialize your data structure here.
+//     */
+//    public MiniStack() {
+//        element = new int[maxsize];
+//        min = Integer.MAX_VALUE;
+//        size = 0;
+//    }
+//
+//    public void push(int x) {
+//        if (size >= maxsize) {
+//            return;
+//        } else {
+//            size++;
+//            element[size-1] = x;
+//        }
+//        if (x <= min)
+//            min = x;
+//    }
+//
+//    public void pop() {
+//        if (min==element[size-1]){
+//            min = Integer.MAX_VALUE;
+//            for (int i = 0; i < size-1; i++) {
+//                if (min>= element[i])
+//                    min = element[i];
+//            }
+//            element[size-1]=0;
+//            size--;
+//        }else
+//        {
+//            element[size-1] = 0;
+//            size --;
+//        }
+//
+//    }
+//
+//    public int top() {
+//        if (size == 0) {
+//            System.out.println("the stack is empty");
+//            return 0;
+//        } else {
+//            return element[size-1];
+//        }
+//
+//    }
+//
+//    public int getMin() {
+//        return min;
+//    }
+    Stack<Integer> stack;
+    Stack<Integer> minStack;
 
-    /**
-     * initialize your data structure here.
-     */
     public MiniStack() {
-        element = new int[maxsize];
-        min = Integer.MAX_VALUE;
-        size = 0;
+        stack = new Stack<>();
+        minStack = new Stack<>();
     }
 
     public void push(int x) {
-        if (size >= maxsize) {
-            return;
+        stack.add(x);
+        if (minStack.isEmpty() || minStack.peek() >= x) {
+            minStack.add(x);
+
         } else {
-            size++;
-            element[size-1] = x;
+            minStack.add(minStack.peek());
         }
-        if (x <= min)
-            min = x;
     }
 
     public void pop() {
-        if (min==element[size-1]){
-            min = Integer.MAX_VALUE;
-            for (int i = 0; i < size-1; i++) {
-                if (min>= element[i])
-                    min = element[i];
-            }
-            element[size-1]=0;
-            size--;
-        }else
-        {
-            element[size-1] = 0;
-            size --;
+        if (!stack.isEmpty()){
+            minStack.pop();
+            stack.pop();
         }
 
     }
 
     public int top() {
-        if (size == 0) {
-            System.out.println("the stack is empty");
-            return 0;
-        } else {
-            return element[size-1];
-        }
 
+       if (!stack.isEmpty()){
+           return stack.peek();
+       }else
+           return 0;
     }
 
     public int getMin() {
-        return min;
-    }
 
-    public static void main(String[] args) {
-       int a = -2;
-       int b = -3;
-       MiniStack miniStack = new MiniStack();
-       miniStack.push(a);
-       miniStack.push(b);
-        System.out.println(miniStack.getMin());
-        System.out.println("top"+miniStack.top());
-        System.out.println("+++++++++++++++++++");
-        miniStack.pop();
-        System.out.println("top"+miniStack.top());
-        System.out.println("min"+miniStack.getMin());
+        return minStack.peek();
     }
 }
 
