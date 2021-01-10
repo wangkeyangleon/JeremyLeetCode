@@ -129,6 +129,9 @@ public class MiniStack {
 
         return minStack.peek();
     }
+    class NodeStack{
+
+    }
 }
 
 /**
