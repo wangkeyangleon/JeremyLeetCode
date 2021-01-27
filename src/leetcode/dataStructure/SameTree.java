@@ -29,29 +29,29 @@ import java.util.ArrayList;
  **/
 public class SameTree {
     public boolean isSameTree(TreeNode p, TreeNode q) {
-//        TreeNode tempP = p;
-////        TreeNode tempQ = q;
-////        //traverse left subtree
-////        while (tempP != null && tempQ != null) {
-////            if (tempP.val != tempQ.val) {
-////                return false;
-////            }
-////            tempP = tempP.left;
-////            tempQ = tempQ.left;
-////        }
-////        if (tempP!=null || tempQ!=null){
-////            return  false;
-////        }
-////
-////        //traverse right subtree
-////        while (p != null && q != null) {
-////            if (p.val != q.val) {
-////                return false;
-////            }
-////            p = p.right;
-////            q = q.right;
-////        }
-////        return q == null && p == null;
+        TreeNode tempP = p;
+//        TreeNode tempQ = q;
+//        //traverse left subtree
+//        while (tempP != null && tempQ != null) {
+//            if (tempP.val != tempQ.val) {
+//                return false;
+//            }
+//            tempP = tempP.left;
+//            tempQ = tempQ.left;
+//        }
+//        if (tempP!=null || tempQ!=null){
+//            return  false;
+//        }
+//
+//        //traverse right subtree
+//        while (p != null && q != null) {
+//            if (p.val != q.val) {
+//                return false;
+//            }
+//            p = p.right;
+//            q = q.right;
+//        }
+//        return q == null && p == null;
         if (p == null && q == null) {
             return true;
         } else if (p == null || q == null) {
