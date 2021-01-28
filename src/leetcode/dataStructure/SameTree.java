@@ -70,7 +70,7 @@ class TreeNode {
     TreeNode left;
     TreeNode right;
 
-    TreeNode() {
+    TreeNode(Integer o) {
     }
 
     TreeNode(int val) {
