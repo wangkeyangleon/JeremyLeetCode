@@ -46,6 +46,18 @@ public class BalancedBinaryTree {
         }
     }
     public boolean isBalanced2(TreeNode root){
-
+        return calculateHeight(root)>=0;
+    }
+    public int calculateHeight(TreeNode root){
+        if (root == null){
+            return 0;
+        }
+        int leftHeight = calculateHeight(root.left);
+        int rightHeight = calculateDepth(root.right);
+        if (rightHeight==-1||leftHeight==-1||Math.abs(leftHeight-rightHeight)>1){
+            return -1;
+        }else {
+            return Math.max(leftHeight,rightHeight)+1;
+        }
     }
 }
