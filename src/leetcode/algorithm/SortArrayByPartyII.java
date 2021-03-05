@@ -34,24 +34,45 @@ import java.util.Arrays;
  **/
 public class SortArrayByPartyII {
     public int[] sortArrayByParityII(int[] nums) {
-        int [] tempNums = new int[nums.length];
+        int[] tempNums = new int[nums.length];
         int even = 1;
         int odd = 0;
-        for (int i = 0; i < nums.length; i++) {
-            if (nums[i]%2==0){
-                tempNums[odd] = nums[i];
-                odd+=2;
-            }else {
-                tempNums[even] = nums[i];
-                even+=2;
+        for (int num : nums) {
+            if (num % 2 == 0) {
+                tempNums[odd] = num;
+                odd += 2;
+            } else {
+                tempNums[even] = num;
+                even += 2;
             }
         }
         return tempNums;
     }
 
+    //this method makes the space complexity to be O(N)
+    public int[] bestMethod(int[] nums) {
+        int a = 1;
+        for (int i = 0; i <nums.length ; i+=2) {
+            if (nums[i]%2==1){
+                while (nums[a]%2==1){
+                    a+=2;
+                }
+                swap(nums,i,a);
+            }
+        }
+        return nums;
+    }
+
+    private void swap(int[] nums, int i, int j) {
+        int temp = nums[i];
+        nums[i] = nums[j];
+        nums[j] = temp;
+    }
+
     public static void main(String[] args) {
         SortArrayByPartyII sortArrayByPartyII = new SortArrayByPartyII();
-        int [] nums = {4,2,5,7};
+        int[] nums = {4, 2, 5, 7};
         System.out.println(Arrays.toString(sortArrayByPartyII.sortArrayByParityII(nums)));
+        System.out.println(Arrays.toString(sortArrayByPartyII.bestMethod(nums)));
     }
 }
