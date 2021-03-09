@@ -25,7 +25,7 @@ public class BubbleSort {
         return array;
     }
 
-    private int[] bestBubbleSort(int array[]) {
+    public int[] bestBubbleSort(int array[]) {
         boolean swap = true;
         for (int i = 0; i < array.length - 1; i++) {
             swap = false;

@@ -40,11 +40,11 @@ public class LargestPerimeterTriangle {
         } else {
             while (length > 3) {
                 length--;
-                a = nums[length-1];
-                b = nums[length-2];
-                c = nums[length-3];
-                if ((b+c)>a){
-                    return a+b+c;
+                a = nums[length - 1];
+                b = nums[length - 2];
+                c = nums[length - 3];
+                if ((b + c) > a) {
+                    return a + b + c;
                 }
             }
             return 0;
@@ -73,14 +73,14 @@ public class LargestPerimeterTriangle {
         nums[low] = nums[i];
         nums[i] = pivot;
         sortNums(nums, low, i - 1);
-        sortNums(nums, i + 1, high );
+        sortNums(nums, i + 1, high);
 
     }
 
     public static void main(String[] args) {
         LargestPerimeterTriangle largestPerimeterTriangle = new LargestPerimeterTriangle();
-        int nums[] = {1,2,1};
-        largestPerimeterTriangle.sortNums(nums,0,nums.length-1);
+        int nums[] = {1, 2, 1};
+        largestPerimeterTriangle.sortNums(nums, 0, nums.length - 1);
         //System.out.println(Arrays.toString(nums));
         System.out.println(largestPerimeterTriangle.largestPerimeter(nums));
         //    int nums[] = {2,1,2};
