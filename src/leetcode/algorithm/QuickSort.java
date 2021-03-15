@@ -38,15 +38,42 @@ public class QuickSort {
         }
         arr[low] = arr[i];
         arr[i] = p;
-        quickSort(arr,low,i-1);
-        quickSort(arr,i+1,high);
+        quickSort(arr, low, i - 1);
+        quickSort(arr, i + 1, high);
+    }
+
+    private void quickSort2(int[] array, int low, int high) {
+        if (low >= high) {
+            return;
+        }
+        int pivot = array[low];
+        int left = low;
+        int right = high;
+        while (left < right) {
+            //find the element which is smaller than pivot from the right
+            while (array[right]>=pivot&&left<right){
+                right--;
+            }
+            //find the element which is larger than pivot from the left
+            while (array[left]<=pivot&&left<right){
+                left++;
+            }
+            int temp = array[right];
+            array[right] = array[left];
+            array[left] = temp;
+        }
+        array[low] = array[left];
+        array[left] = pivot;
+        quickSort2(array,low,left-1);
+        quickSort2(array,left+1,high);
+
     }
 
 
     public static void main(String[] args) {
         QuickSort quickSort = new QuickSort();
-        int[] array = {5,2,3,1};
-        quickSort.quickSort(array, 0, array.length - 1);
+        int[] array = {3, 5, 10, 1, 6, 9, 4};
+        quickSort.quickSort2(array, 0, array.length - 1);
         System.out.println(Arrays.toString(array));
 
     }
