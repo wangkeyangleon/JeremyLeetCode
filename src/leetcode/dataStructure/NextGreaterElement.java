@@ -65,11 +65,11 @@ public class NextGreaterElement {
         Stack<Integer> stack = new Stack<>();
         HashMap<Integer, Integer> hashMap = new HashMap<>();
         int [] results = new int[nums1.length];
-        for (int i = 0; i < nums2.length; i++) {
-            while (!stack.isEmpty()&&stack.peek()<nums2[i]){
-                hashMap.put(stack.pop(),nums2[i]);
+        for (int j : nums2) {
+            while (!stack.isEmpty() && stack.peek() < j) {
+                hashMap.put(stack.pop(), j);
             }
-            stack.push(nums2[i]);
+            stack.push(j);
         }
         while (!stack.isEmpty()){
             hashMap.put(stack.pop(),-1);
