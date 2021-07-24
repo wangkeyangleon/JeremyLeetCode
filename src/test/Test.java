@@ -23,22 +23,29 @@ public class Test {
 //        System.out.println(data[1].length);
 //        System.out.println(data.length);
 //        System.out.println(7<7);
-        String s1 = "hello";
-        String s2 = "hello";
-        String s3 = new String("hello");
-        String s4 = new String("hello");
+//        String s1 = "hello";
+//        String s2 = "hello";
+//        String s3 = new String("hello");
+//        String s4 = new String("hello");
+//
+//        System.out.println(s1 == s2);
+//        System.out.println(s3==s4);
+//        System.out.println(s1 ==s3);
+//
+//        StringBuilder stringBuilder = new StringBuilder();
+//        stringBuilder.append("hello");
+//        System.out.println(stringBuilder);
+//
+//        StringBuffer stringBuffer = new StringBuffer();
+//        stringBuffer.append("hello");
+//        System.out.println(stringBuffer);
 
-        System.out.println(s1 == s2);
-        System.out.println(s3==s4);
-        System.out.println(s1 ==s3);
-
-        StringBuilder stringBuilder = new StringBuilder();
-        stringBuilder.append("hello");
-        System.out.println(stringBuilder);
-
-        StringBuffer stringBuffer = new StringBuffer();
-        stringBuffer.append("hello");
-        System.out.println(stringBuffer);
+        double a = 3.2;
+        double b = 3.2d;
+        long c = 2;
+        long d = 2l;
+        float f = 3.2f;
+        System.out.println(a+"\n"+b+"\n"+c+"\n"+d+"\n"+f);
 
     }
 }
