@@ -40,12 +40,16 @@ public class Test {
 //        stringBuffer.append("hello");
 //        System.out.println(stringBuffer);
 
-        double a = 3.2;
-        double b = 3.2d;
-        long c = 2;
-        long d = 2l;
-        float f = 3.2f;
-        System.out.println(a+"\n"+b+"\n"+c+"\n"+d+"\n"+f);
+//        double a = 3.2;
+//        double b = 3.2d;
+//        long c = 2;
+//        long d = 2l;
+//        float f = 3.2f;
+//        System.out.println(a+"\n"+b+"\n"+c+"\n"+d+"\n"+f);
+
+        int [][]matrix = {{2,3},{1,2},{5,6}};
+        System.out.println(matrix.length);
+        System.out.println(matrix[0].length);
 
     }
 }

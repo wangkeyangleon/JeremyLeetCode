@@ -31,6 +31,23 @@ public class DuplicateNumber {
         }
         return 0;
     }
+    // space complexity is O(1)
+    public int findRepeatNumber2(int[] nums) {
+        for (int i = 0; i < nums.length; i++) {
+            while (nums[i] != i){
+                //check if the num[i] == num[num[i]], if yes return, if not swap it
+                int temp = nums[i];
+                if (nums[i] == nums[nums[i]]){
+                    return nums[i];
+                }
+                //swap
+                nums[i] = nums[temp];
+                nums[temp] = temp;
+            }
+        }
+        return 0;
+    }
+
 
     public static void main(String[] args) {
 
