@@ -102,9 +102,7 @@ class SingleLinkedList {
         //set a temporary variable as the head
         Node temp = head;
         //get the value of the index
-        for (int i = 0; i <index+1; i++) {
-            temp = temp.next;
-        }
+        for (int i = 0; i <index+1; i++) temp = temp.next;
         return temp.val;
     }
 

@@ -20,8 +20,8 @@ public class ReverseLinkedList {
         ListNode1 temp = head;
         while (temp!=null){
             //assign a temporary variable
-            ListNode1 nextTemp = temp.next;
-            temp.next = result;
+            ListNode1 nextTemp = temp.getNext();
+            temp.setNext(result);
             result = temp;
             temp = nextTemp;
         }
@@ -32,7 +32,7 @@ public class ReverseLinkedList {
 
 class ListNode1 {
     int val;
-    ListNode1 next;
+    private ListNode1 next;
 
     public ListNode1() {
     }
@@ -43,6 +43,14 @@ class ListNode1 {
 
     public ListNode1(int val, ListNode1 next) {
         this.val = val;
+        this.setNext(next);
+    }
+
+    public ListNode1 getNext() {
+        return next;
+    }
+
+    public void setNext(ListNode1 next) {
         this.next = next;
     }
 }
