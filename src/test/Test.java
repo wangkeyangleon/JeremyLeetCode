@@ -169,35 +169,39 @@ public class Test {
 //           num1[m+i] = num2[i];
 //       }
 //       }
-private int getNum(int n){
-    ArrayList<Integer> arrayList = new ArrayList<>();
-    int temp = 1;
-    for (int i = 0; i <n; i++) {
-        arrayList.add(temp);
-        temp++;
-    }
-    int size = arrayList.size();
-    int j = 0;
-    while (size>1){
-        int index = 0;
-        for(int i =j; i<n;i++){
-            if (i%3 ==0){
-                arrayList.remove(index);
-            }
-            index ++;
-        }
-        j = n;
-        n =  n+arrayList.size();
-    }
-
-    return arrayList.get(0);
+//private int getNum(int n){
+//    ArrayList<Integer> arrayList = new ArrayList<>();
+//    int temp = 1;
+//    for (int i = 0; i <n; i++) {
+//        arrayList.add(temp);
+//        temp++;
+//    }
+//    int size = arrayList.size();
+//    int j = 0;
+//    while (size>1){
+//        int index = 0;
+//        for(int i =j; i<n;i++){
+//            if (i%3 ==0){
+//                arrayList.remove(index);
+//            }
+//            index ++;
+//        }
+//        j = n;
+//        n =  n+arrayList.size();
+//    }
+//
+//    return arrayList.get(0);
+//}
+//    public static void main(String[] args) {
+//    Test test = new Test();
+//        System.out.println(test.getNum(5));
+//
+//
+//    }
+public static void main(String[] args) {
+    long a = 1370;
+    System.out.println(a%10);
 }
-    public static void main(String[] args) {
-    Test test = new Test();
-        System.out.println(test.getNum(5));
-
-
-    }
 
 
 
