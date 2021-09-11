@@ -1,5 +1,6 @@
 package test;
 
+import javax.xml.bind.SchemaOutputResolver;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
@@ -199,8 +200,20 @@ public class Test {
 //
 //    }
 public static void main(String[] args) {
-    long a = 1370;
-    System.out.println(a%10);
+//
+    //System.out.println(1/5%3);
+    int num =1;
+    int end = 75;
+    int id = 1;
+//    while (num<=end){
+//        if (num/5%3 == id){
+//            for (int i = 0; i < 5; i++) {
+//                System.out.println(num++ );
+//            }
+//
+//        }
+//    }
+    System.out.println(11/5%3);
 }
 
 
